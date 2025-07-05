@@ -1,0 +1,11 @@
+.vite
+node_modules
+src/
+*.config.js
+vite.config.ts
+tailwind.config.js
+postcss.config.js
+tsup.config.ts
+tsconfig.json
+index.html
+*.md

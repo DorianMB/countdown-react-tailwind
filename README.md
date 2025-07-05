@@ -34,13 +34,25 @@ function App() {
 
 ## Props
 
-| Prop              | Type         | Description                                              |
-|-------------------|--------------|----------------------------------------------------------|
-| targetDate        | string \| Date | The target date/time for the countdown (ISO or Date JS) |
-| countdownColor    | string       | (Optional) Background color for fragments (default: #000) |
-| textColor         | string       | (Optional) Text color (default: #fff)                    |
-| className         | string       | (Optional) Custom classes for the main container         |
-| fragmentClassName | string       | (Optional) Custom classes for each fragment (square)     |
+| Prop              | Type           | Default   | Description                                              |
+|-------------------|----------------|-----------|----------------------------------------------------------|
+| targetDate        | string \| Date | —         | The target date/time for the countdown (ISO or Date JS)  |
+| countdownColor    | string         | #000      | (Optional) Background color for fragments                |
+| textColor         | string         | #fff      | (Optional) Text color                                    |
+| className         | string         | ""        | (Optional) Custom classes for the main container         |
+| fragmentClassName | string         | ""        | (Optional) Custom classes for each fragment (square)     |
+
+### Example with custom colors
+
+```tsx
+<Countdown
+  targetDate={"2025-12-31T23:59:59"}
+  countdownColor="#1e293b"
+  textColor="#fbbf24"
+  className="my-8 justify-center"
+  fragmentClassName="shadow-lg"
+/>
+```
 
 ## Styling
 

@@ -8,4 +8,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Initial setup for npm React library
 - Add customizable Countdown component
 - Tailwind CSS integration
+- Documentation: props table updated in README, usage example with custom colors
 

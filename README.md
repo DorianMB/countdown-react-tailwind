@@ -36,20 +36,33 @@ function App() {
 
 | Prop              | Type           | Default   | Description                                              |
 |-------------------|----------------|-----------|----------------------------------------------------------|
-| targetDate        | string \| Date | —         | The target date/time for the countdown (ISO or Date JS)  |
+| targetDate        | string \| Date | 4         | The target date/time for the countdown (ISO or Date JS)  |
 | countdownColor    | string         | #000      | (Optional) Background color for fragments                |
 | textColor         | string         | #fff      | (Optional) Text color                                    |
 | className         | string         | ""        | (Optional) Custom classes for the main container         |
 | fragmentClassName | string         | ""        | (Optional) Custom classes for each fragment (square)     |
 | labels            | object         | undefined | (Optional) Custom labels for time units (see below)      |
+| maxUnit           | string         | "days"    | (Optional) Plus grande unité à afficher ("years", "days", "hours", etc.) |
+
 ### Customizing time unit labels
 
-You can override the default English labels ("Days", "Hours", "Minutes", "Seconds") using the `labels` prop (here in french) :
+You can override the default English labels ("Years", "Days", "Hours", "Minutes", "Seconds") using the `labels` prop (here in french) :
 
 ```tsx
 <Countdown
   targetDate={"2025-12-31T23:59:59"}
-  labels={{ days: "Jours", hours: "Heures", minutes: "Minutes", seconds: "Secondes" }}
+  labels={{ years: "Années", days: "Jours", hours: "Heures", minutes: "Minutes", seconds: "Secondes" }}
+/>
+```
+
+### Limiting the largest unit displayed
+
+You can control the largest unit displayed using the `maxUnit` prop. For example, to show years:
+
+```tsx
+<Countdown
+  targetDate={"2030-01-01T00:00:00"}
+  maxUnit="years"
 />
 ```
 

@@ -1,43 +1,66 @@
-# React + TypeScript + Vite
+# countdown-react-tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A customizable countdown component for React, styled with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
+- Easy to use React component
+- Fully customizable via props
+- Styled with Tailwind CSS
+- Lightweight and fast
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install countdown-react-tailwind
 ```
+
+or
+
+```bash
+yarn add countdown-react-tailwind
+```
+
+## Usage
+
+```tsx
+import Countdown from 'countdown-react-tailwind';
+
+function App() {
+  return (
+    <Countdown targetDate={new Date('2025-12-31T23:59:59')} />
+  );
+}
+```
+
+## Props
+
+| Prop              | Type         | Description                                              |
+|-------------------|--------------|----------------------------------------------------------|
+| targetDate        | string \| Date | The target date/time for the countdown (ISO or Date JS) |
+| countdownColor    | string       | (Optional) Background color for fragments (default: #000) |
+| textColor         | string       | (Optional) Text color (default: #fff)                    |
+| className         | string       | (Optional) Custom classes for the main container         |
+| fragmentClassName | string       | (Optional) Custom classes for each fragment (square)     |
+
+## Styling
+
+This component uses Tailwind CSS for styling. Make sure Tailwind is set up in your project.
+
+## Development
+
+- Clone the repo
+- Run `npm install`
+- Run `npm run dev` to start the example app
+
+## Publishing
+
+- Update the version in `package.json`
+- Update `CHANGELOG.md`
+- Run `npm publish`
+
+## License
+
+MIT
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 

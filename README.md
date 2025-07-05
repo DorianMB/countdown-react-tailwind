@@ -41,6 +41,17 @@ function App() {
 | textColor         | string         | #fff      | (Optional) Text color                                    |
 | className         | string         | ""        | (Optional) Custom classes for the main container         |
 | fragmentClassName | string         | ""        | (Optional) Custom classes for each fragment (square)     |
+| labels            | object         | undefined | (Optional) Custom labels for time units (see below)      |
+### Customizing time unit labels
+
+You can override the default English labels ("Days", "Hours", "Minutes", "Seconds") using the `labels` prop (here in french) :
+
+```tsx
+<Countdown
+  targetDate={"2025-12-31T23:59:59"}
+  labels={{ days: "Jours", hours: "Heures", minutes: "Minutes", seconds: "Secondes" }}
+/>
+```
 
 ### Example with custom colors
 

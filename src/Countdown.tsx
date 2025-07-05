@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
 
+interface CountdownLabelStrings {
+    days?: string;
+    hours?: string;
+    minutes?: string;
+    seconds?: string;
+}
+
 interface CountdownProps {
     /** Date cible du compte à rebours (format ISO ou Date JS) */
     targetDate: string | Date;
@@ -9,6 +16,8 @@ interface CountdownProps {
     className?: string;
     /** Classe(s) personnalisée(s) pour chaque fragment (carré) */
     fragmentClassName?: string;
+    /** Labels personnalisés pour les unités de temps */
+    labels?: CountdownLabelStrings;
 }
 
 const Countdown: React.FC<CountdownProps> = ({
@@ -17,6 +26,7 @@ const Countdown: React.FC<CountdownProps> = ({
     textColor = "#fff",
     className = "",
     fragmentClassName = "",
+    labels = {},
 }) => {
     const calculateTimeLeft = () => {
         const target = typeof targetDate === "string" ? new Date(targetDate) : targetDate;
@@ -47,10 +57,10 @@ const Countdown: React.FC<CountdownProps> = ({
     const formatNumber = (num: number) => String(num).padStart(2, "0");
 
     const timeUnits = [
-        { label: "Jours", value: timeLeft.days },
-        { label: "Heures", value: timeLeft.hours },
-        { label: "Minutes", value: timeLeft.minutes },
-        { label: "Secondes", value: timeLeft.seconds },
+        { label: labels.days || "Days", value: timeLeft.days },
+        { label: labels.hours || "Hours", value: timeLeft.hours },
+        { label: labels.minutes || "Minutes", value: timeLeft.minutes },
+        { label: labels.seconds || "Seconds", value: timeLeft.seconds },
     ];
 
     return (
